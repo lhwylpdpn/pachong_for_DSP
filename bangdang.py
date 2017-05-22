@@ -34,7 +34,7 @@ def spider_toutiao():
 		if item.name=="csrftoken":
 			token=item.value
 	print(token)#  确认token 获取成功
-	data=urllib.urlencode({"csrfmiddlewaretoken":token,"email":"364350382@qq.com","password":"1234@Abcd"})
+	data=urllib.urlencode({"csrfmiddlewaretoken":token,"email":"x","password":"x"})
 	headers=[]
 	#url="https://ad.toutiao.com/overture/data/advertiser/ad/"
 	#url="https://ad.toutiao.com/overture/reporter/creative_stat/?page=1&st=2017-01-10&et=2017-02-23&day=1&inventory_type=0&image_mode=0&sort_stat=stat_cost&sort_order=1&compare=0&pricing=%%5B1%%2C2%%2C4%%2C7%%2C8%%2C9%%2C10%%5D&_=1494313000682"
