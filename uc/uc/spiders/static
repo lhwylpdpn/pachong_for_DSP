@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>阿里汇川</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, post-check=0, pre-check=0">
+        <meta http-equiv="expires" content="0">
+        <meta http-equiv="pragma" content="no-cache">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link href="reset.css" rel="stylesheet">
+        <link href="base.css" rel="stylesheet">
+        <script>
+            (function() {
+                var u= location.protocol + "//image.uc.cn/s/uae/g/0s/fh/render/renderV2.js";
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript';
+                g.src = u;
+                s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+        <script type="text/javascript">
+            var _paq = _paq || [];
+            (function(){
+                var u= location.protocol + "//track.uc.cn/";
+                _paq.push(['setSiteId', '27cfe14ef220']);
+                _paq.push(['setTrackerUrl', u+'collect?uc_param_str=dnfrcpve']);
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.defer=true; g.async=true;
+                g.src=u+'uaest.js';
+                s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+    <link href="main.v2471b2a.css" rel="stylesheet"></head>
+    <body>
+        <div id="app">
+            <router-view></router-view>
+        </div>
+    <script type="text/javascript" src="js/main.v2471b2a.js"></script></body>
+</html>

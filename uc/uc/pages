@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>阿里汇川</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- 禁止兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
+  <!-- #CSS Links -->
+  <link rel="stylesheet" type="text/css" href="../css/hclogin.css?v=20170210">
+  <script type="text/javascript" src="../js/lib/jquery-1.10.2-min.js?v=20170210"></script>
+  <script type="text/javascript" src="../js/imagesloaded.pkgd.js?v=20170210"></script>
+  <script type="text/javascript" src="../js/xslider.js?v=20170210"></script>
+  <script type="text/javascript" src="../js/success.js?v1"></script>
+  <script type="text/javascript" src="../js/casLoginView.js?v=20170210"></script>
+  <!-- #FAVICONS -->
+  <link rel="shortcut icon" href="../images/hcfavicon.ico" type="image/vnd.microsoft.icon" />
+</head>
+
+  <!-- #BODY -->
+<body >
+  <input id="errorCode" type="hidden" value="$!errorCode" />
+  <div id="header">
+    <div class="headline">
+      <div class="headline-inner">
+        <img class="hc_logo" src="../images/hc_logo.png" />
+        <a class="markting" target="_blank" href="introduce.html">营销中心</a>
+      </div>
+    </div>
+    <div class="main">
+      <div class="main-inner">
+        <div class="slide">
+          <div class="conbox">
+            <div style="background: #121213">
+                <img src="../images/hc.png">
+            </div>
+            <div style="background: #365b7e">
+                <img src="../images/qiqu.png">
+            </div>
+            <div style="background: #efefef">
+                <img src="../images/app.png">
+            </div>
+            <div style="background: #354dcd">
+                <img src="../images/dingxiang.png">
+            </div>
+          </div>
+          <div class="switcher">
+            <a href="javascript: void(0)" class="cur"></a>
+            <a href="javascript: void(0)"></a>
+            <a href="javascript: void(0)"></a>
+            <a href="javascript: void(0)"></a>
+          </div>
+        </div>
+        <div class="login_board">
+          <div class="login-inner">
+            <h2 class="float-left">登录汇川</h2>
+            <form id="fm1">
+              <input id="username" name="userName" class="border_b form-control" tabindex="1" placeholder="用户名" accesskey="n" type="text" value="" size="25" autocomplete="off">
+              <input id="password" name="password" class="border_b form-control" tabindex="2" placeholder="请输入密码" accesskey="p" type="password" value="" size="25" autocomplete="off">
+              <input name="captchaCode" size="25" class="border_b form-control js-hc-code small_inline" tabindex="3" value="" autocomplete="off" placeholder="验证码">
+              <span class="checkcode_img">
+                <img src="" alt="CAPTCHA Image" id="authImg" height="30px" />
+              </span>
+              <div class="divRefresh clearfix">
+                <span class="errors js-errors"></span>
+                <a href="javascript:void(0);" id="changeVercode" class="refresh text-link fn-clear">换一张</a>
+              </div>
+              <button class="btn btn-warning js-hc-loginBtn">登录</button>
+            </form>
+            <div class="help">
+              <a href="javascript:void(0);" id="hcregister" class="float-left text-warning">注册</a>
+              <a href="javascript:void(0)" id="hcpassword" class="float-right text-default" target="_blank">忘记密码
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="content">
+    <div class='introduce'>
+      <hr class="warning">
+      <div class="section-heading">产品介绍</div>
+      <span class="section-text">Product</span>
+      <div class="intro-main">
+        <div class="intro-item">
+          <img src="../images/p1.png" class="img-thumbnail" />
+          <h3 class="intro-title">优质媒体流量</h3>
+          <span class="intro-detail">阿里汇川聚合UC浏览器、UC信息流、PP助手等优质自有流量，用户真实，粘性高</span>
+        </div>
+
+        <div class="intro-item">
+          <img src="../images/p2.png" class="img-thumbnail" />
+          <h3 class="intro-title">精确广告匹配</h3>
+          <span class="intro-detail">聚合神马移动搜索，阿里用户行为大数据，为每一次展现精准匹配广告</span>
+        </div>
+
+        <div class="intro-item ">
+          <img src="../images/p3.png" class="img-thumbnail" />
+          <h3 class="intro-title">广告样式丰富</h3>
+          <span class="intro-detail">支持信息流原生广告、应用市场广告、视频广告、横幅图片、图文半幅等，客户自主选择。</span>
+        </div>
+      </div>
+    </div>
+    <div class="example">
+      <hr class="warning">
+      <div class="section-heading">合作案例</div>
+      <span class="section-text">Partner</span>
+      <div class="ex-main">
+        <div class="ex-item">
+          <div class="bg-img ex-1"></div>
+          <div class="ex-title">无忧英语</div>
+        </div>
+
+        <div class="ex-item">
+          <div class="bg-img ex-2"></div>
+          <div class="ex-title">同程旅游</div>
+        </div>
+
+        <div class="ex-item">
+          <div class="bg-img ex-3"></div>
+          <div class="ex-title">唯品会</div>
+        </div>
+
+        <div class="ex-item">
+          <div class="bg-img ex-4"></div>
+          <div class="ex-title">大众点评</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="copyright">
+      <span>©2004-2016 uc.cn 版权所有 网络文化许可证：粤网文[2013]0245-095号</span>
+    </div>
+    <div class="indicator">
+      <span>
+        中华人民共和国互联网药品信息服务资格证：（粤）-非经营性-2011-0120
+        穗公网监备案证第44010650010141
+      </span>
+    </div>
+  </div>
+
+  <!--[if IE 8]>
+  <h1>
+    Your browser is out of date, please update your browser by going to www.microsoft.com/download
+  </h1>
+  <![endif]-->
+
+
+</body>
+
+</html>

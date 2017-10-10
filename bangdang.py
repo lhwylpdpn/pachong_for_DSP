@@ -26,15 +26,7 @@ def spider_toutiao():
 	cookie = cookielib.CookieJar()
 	handler = urllib2.HTTPCookieProcessor(cookie)
 	opener = urllib2.build_opener(handler)
-	url="https://ad.toutiao.com/login/"
-	token=""
-	data=""
-	res = opener.open(url)
-	for item in cookie:
-		if item.name=="csrftoken":
-			token=item.value
-	print(token)#  确认token 获取成功
-	data=urllib.urlencode({"csrfmiddlewaretoken":token,"email":"x","password":"x"})
+	url="https://e.uc.cn/ad/web/init/operator?userId=0&_t=1504005049501"
 	headers=[]
 	#url="https://ad.toutiao.com/overture/data/advertiser/ad/"
 	#url="https://ad.toutiao.com/overture/reporter/creative_stat/?page=1&st=2017-01-10&et=2017-02-23&day=1&inventory_type=0&image_mode=0&sort_stat=stat_cost&sort_order=1&compare=0&pricing=%%5B1%%2C2%%2C4%%2C7%%2C8%%2C9%%2C10%%5D&_=1494313000682"
@@ -63,25 +55,23 @@ def spider_toutiao():
 	#   ('Referer','https://ad.toutiao.com/login/')\
 	#   ('Upgrade-Insecure-Requests', '1')]
 
-	headers.append(('Cookie','login_flag=673b34113cbd60dfb16ef9459614fc89; sessionid=045478ea44327f38154b5befa2cc9b19; sid_tt=045478ea44327f38154b5befa2cc9b19; sid_guard="045478ea44327f38154b5befa2cc9b19|1494241731|2592000|Wed\\054 07-Jun-2017 11:08:51 GMT"; Hm_lvt_85c76e21c62dcb584da211941caf4e0a=1494241739; csrftoken='+str(token)+'; part=stable; _ga=GA1.2.1764577891.1494240835; _gid=GA1.2.374623132.1494927607; _gat=1'))
-	headers.append(('Accept','*/*'))
+	headers.append(('Cookie','JSESSIONID=E4D0B7AF6525A0C21BE4915F5B2B055F; SSO_IDT="Bearer eyJhbGciOiJBMTI4S1ciLCJjdHkiOiJKV1QiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0.TqLKB4uRFOBZnICQOtQzYgGsqIMISlPvXc1054IOBIxWObzJQGtLmw.d_c86df7G6huA_nXDJwAUg.R1hZjNxEIVTrZAXkjb9hV3VEUkVKgqLdQpR33EDbIrwDgegqfshdy1KhBeoCt2-gnuL0DqNbpkyUjFhH_Z4ZV6fLEQtr6CenLXrvUViaOtPJR1k7mqbmaX26jqdhOWn6w3F-wrxwZ2rOVbQ03duzVCUYQZVJNMiDKLsFa6VjKIrfhGIUmBkUzcJRkF6hHl68x13wJseDymfw_VVEuYAcqJdwYU5TKmwdW0YqU_l_Ph0Llsbcna9xeD70_ZwHWtPKocNz53So8i5l17Z6YhqGpg0X6jCQRXCz5suK11fsiBtcLONTiVMgt1krq7oxcgjDjlpcwB8MUwsMMTEcNc-AL_Q6BmakS0DFjLagdXH0qKu6fD9LjvvrYAga1Ytn-2sJ-0AOxH2u30b_QNn1wNvoKpmtBb7qOc9agzzM0jBHBk0._Khd9SCvQXsNHzE7FLrWbw"; _pk_id.27cfe14ef220.a6b8=064b7c83-1bf2-4b25-a60b-a961abbff7a4.1503988295.5.1504005050.1503999702.; _pk_ses.27cfe14ef220.a6b8=*'))
+	headers.append(('Accept','text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'))
 	headers.append(('User-Agent' , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3053.3 Safari/537.36'))
 	headers.append(('Accept-Language','zh-CN,zh;q=0.8,en;q=0.6' ))
-	headers.append(('Content-Type', 'multipart/form-data; boundary=----WebKitFormBoundarySpLUemDW8rDnMyRf'))
+	headers.append(('Cache-Control', 'max-age=0'))
 	headers.append(('Connection', 'keep-alive'))
-	headers.append(('Host', 'ad.toutiao.com'))
-	headers.append(('Referer','https://ad.toutiao.com/login/'))
+	headers.append(('Host', 'e.uc.cn'))
+	headers.append(('Upgrade-Insecure-Requests', '1'))
 
 
 	handler = urllib2.HTTPCookieProcessor(cookie) 
 	opener = urllib2.build_opener(handler)
 	opener.addheaders=headers
-	res=opener.open(url,data)
-	print(res.info())
-	save_html(res.read())
+
 
 	url="https://ad.toutiao.com/overture/reporter/creative_stat/?page=1&st=2017-01-10&et=2017-02-23&day=1&inventory_type=0&image_mode=0&sort_stat=stat_cost&sort_order=1&compare=0&pricing=%%5B1%%2C2%%2C4%%2C7%%2C8%%2C9%%2C10%%5D&_=1494313000682"
-	url="https://ad.toutiao.com/overture/data/advertiser/ad/"
+	url="https://e.uc.cn/ad/web/init/operator?userId=0&_t=1504005049501"
 	opener.addheaders=headers
 	res=opener.open(url)
 
@@ -131,4 +121,4 @@ def create_json(word,name):
 
 
 if __name__ == '__main__':
-	spider_toutiao()
+	print(spider_toutiao())
