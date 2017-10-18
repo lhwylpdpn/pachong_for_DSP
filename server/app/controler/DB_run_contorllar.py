@@ -4,12 +4,16 @@ from Config import Config
 import datetime
 import random
 import pymysql
+import sys
+reload(sys)
+
+sys.setdefaultencoding('utf8')
 class run_contor:
 
 
 	@staticmethod
 	def update_status(status,des,id_):
-		try:	
+		#try:	
 			mysql_r = pymysql.connect(host=Config.mysql_conf['host'],port=Config.mysql_conf['port'],user=Config.mysql_conf['user'],password=Config.mysql_conf['password'],database=Config.mysql_conf['dbName'],charset=Config.mysql_conf['charset'])
 
 			if 	status=='0':
@@ -45,19 +49,19 @@ SET a.status=3 WHERE a.spider_id=b.spider_id AND a.account_id=b.account_id
 			{"status":"200"}
 			"""
 			return r
-		except:
-			return {"status":"500"}
+		#except:
+			#return {"status":"500"}
 
 
 	@staticmethod
 	def userinfo(id_):
-		result=""
-		try:	
+			result=""
+		#try:	
 			mysql_r = pymysql.connect(host=Config.mysql_conf['host'],port=Config.mysql_conf['port'],user=Config.mysql_conf['user'],password=Config.mysql_conf['password'],database=Config.mysql_conf['dbName'],charset=Config.mysql_conf['charset'])
 
 
 			sql="""
-				select username,password,media_user_id from `account_info` where accountid='"""+str(id_)+"""'
+				select username,password,media_user_id,cookies from `account_info` where accountid='"""+str(id_)+"""'
 				"""
 
 			cursor=mysql_r.cursor()
@@ -65,14 +69,15 @@ SET a.status=3 WHERE a.spider_id=b.spider_id AND a.account_id=b.account_id
 			rs=cursor.fetchall()
 			if len(rs)>0:
 				for r in rs:
-					result='{"status":"200","body":[{"user":"'+str(r[0])+'","pass":"'+str(r[1])+'","media_id":"'+str(r[2])+'"}]}'
+					result='{"status":"200","body":[{"user":"'+str(r[0])+'","pass":"'+str(r[1])+'","media_id":"'+str(r[2])+'","cookies":"'+str(r[3])+'"}]}'.decode('UTF-8')
+
 			else:
 				result='{"status":"500"}'
 			mysql_r.close()
 
 			return result
-		except:
-			return '{"status":"500"}'
+		#except:
+			#return '{"status":"500"}'
 
 
 
@@ -94,5 +99,33 @@ SET a.status=3 WHERE a.spider_id=b.spider_id AND a.account_id=b.account_id
 			{"status":"200"}
 			"""
 			return r
+		#except:
+			#return {"status":"500"}
+
+
+
+	@staticmethod
+	def update_user_info(id_,media_id,cookies_):
+		#try:	
+			mysql_r = pymysql.connect(host=Config.mysql_conf['host'],port=Config.mysql_conf['port'],user=Config.mysql_conf['user'],password=Config.mysql_conf['password'],database=Config.mysql_conf['dbName'],charset=Config.mysql_conf['charset'])
+
+			sql='UPDATE `account_info` SET media_user_id = "'+str(media_id)+'",cookies="'+str(cookies_)+'",flag=NOW() WHERE accountid="'+str(id_)+'" '
+			 
+			
+
+			cursor=mysql_r.cursor()
+			cursor.execute(sql)
+			mysql_r.commit()
+			
+			sql='select accountid,media_user_id,cookies from account_info  WHERE accountid="'+str(id_)+'" and  media_user_id = "'+str(media_id)+'" and cookies="'+str(cookies_)+'" '
+			cursor=mysql_r.cursor()
+			cursor.execute(sql)
+			rs=cursor.fetchall()
+			mysql_r.close()
+			if len(rs)>0:
+				return """{"status":"200"}"""
+			else:
+				return '{"status":"404"}'
+
 		#except:
 			#return {"status":"500"}
